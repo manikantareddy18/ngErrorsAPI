@@ -6,4 +6,4 @@ const JobDetailSchema = mongoose.Schema({
    JobDescription:String
 });
 
-module.exports = mongoose.model('JobDetail', JobDetailSchema);
+module.exports = mongoose.model('jobdetail', JobDetailSchema);

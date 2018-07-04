@@ -1,4 +1,5 @@
 const jobdetail = require('../models/jobdetails.model.js');
+const appliedjobs=require('../models/jobdetails.model.js');
 
 // Retrieve and return all jobdetails from the database.
 exports.findAll = (req, res) => {
@@ -6,6 +7,20 @@ exports.findAll = (req, res) => {
     jobdetail.find()
     .then(jobdetails => {
         res.send(jobdetails);
+        
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while retrieving applicants."
+        });
+    });
+};
+
+// Retrieve and return all applicaappliedjobsnts from the database.
+exports.findAppliedAll = (req, res) => {
+    console.log("Inside controler");
+    appliedjobs.find()
+    .then(applicants => {
+        res.send(applicants);
         
     }).catch(err => {
         res.status(500).send({
@@ -25,7 +40,7 @@ exports.create = (req, res) => {
     }
 
     // Create a JobDetails
-    const JobDetails = new JobDetail({
+    const jobdetail1 = new jobdetail({
         JobId: req.body.JobId,
     JobName: req.body.JobName,
     JobDescription:req.body.JobDescription
@@ -33,7 +48,7 @@ exports.create = (req, res) => {
     });
 
     // Save Note in the database
-    JobDetails.save()
+    jobdetail1.save()
     .then(data => {
         res.send(data);
     }).catch(err => {

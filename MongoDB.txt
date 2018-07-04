@@ -1,0 +1,74 @@
+
+
+npm install mongodb --save
+
+-- To create MongoDB
+use VZJobdb
+
+--Create table 
+db.createCollection("mycol", { capped : true, autoIndexId : true, size :    6142800, max : 10000 } )
+{ "ok" : 1 }
+db.createCollection("appliedjobs", { capped : true, autoIndexId : true, size :    6142800, max : 10000 } )
+
+db.createCollection("applicant", { capped : true, autoIndexId : true, size :    6142800, max : 10000 } ); { "ok":1};
+
+
+db.applicant.insert({
+
+   ApplicantId: 1,
+   ApplicantName: 'Mani', 
+   Description: 'MongoDB Developer'
+  
+});
+--Insert into table
+>db.mycol.insert({
+   _id: ObjectId(7df78ad8902c),
+   title: 'MongoDB Overview', 
+   description: 'MongoDB is no sql database',
+   by: 'tutorials point',
+   url: 'http://www.tutorialspoint.com',
+   tags: ['mongodb', 'database', 'NoSQL'],
+   likes: 100
+});
+
+
+applicant
+
+
+ ApplicantId: String,
+    ApplicantName: String
+}, {
+    timestamps: true
+
+
+-------------------------------------------------------------
+Nodejs
+
+
+"body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.11"
+
+
+	db.createCollection("counters", { capped : true, autoIndexId : true, size :    6142800, max : 10000 } ); { "ok":1};
+	
+	
+	
+	function getNextSequenceValue("ApplicantId"){
+ 
+   var sequenceDocument = db.counters.findOneAndUpdate( "_id" : ApplicantId },
+       { $inc : { sequence_value : 1 } },
+      { new : true }
+   );
+    return sequenceDocument.sequence_value;
+ };
+
+
+
+	
+	--https://stackoverflow.com/questions/14363065/mongoose-mongodb-query-joins-but-i-come-from-a-sql-background
+	--https://stackoverflow.com/questions/34682796/mongoose-inner-join
+	--C:\reactNode\vzjobs\src\Server
+	
+	
+	

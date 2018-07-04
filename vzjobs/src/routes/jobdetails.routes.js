@@ -1,6 +1,7 @@
 module.exports = (app) => {
-    const jobdetails = require('../controllers/jobdetails.controller.js');
-  // Retrieve allJob details
-  app.get('/jobdetails', jobdetails.findAll);
-  app.post('/jobdetails', jobdetails.create);
+  const jobdetail = require('../controllers/jobdetails.controller');
+// Retrieve allJob details
+app.get('/applicant', jobdetail.findAll);
+app.post('/jobdetails', jobdetail.create);
+app.get('/findAppliedAll',jobdetail.findAppliedAll);
 }
